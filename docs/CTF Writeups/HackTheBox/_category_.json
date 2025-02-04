@@ -1,0 +1,8 @@
+{
+  "label": "HackTheBox",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Writeups for HackTheBox machines"
+  }
+}

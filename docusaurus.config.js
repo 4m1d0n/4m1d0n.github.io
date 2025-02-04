@@ -10,6 +10,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
+
+  
   title: 'My Site',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
@@ -50,6 +52,7 @@ const config = {
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
+
         blog: {
           showReadingTime: true,
           feedOptions: {
@@ -78,24 +81,59 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: '4M1D0N',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
         },
         items: [
+
+          // ----------------------------------
+          {
+            href: 'https://github.com/{username}/{repo}',
+            'aria-label': 'GitHub',
+            className: 'navbar__icon navbar__github',
+            position: 'right',
+            html: '<i class="fa fa-github"></i>',
+          },
+          // ----------------------------------
+
+
+
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Docs',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          },
+          {to: 'about', label: 'About Me', position: 'left'},
+              {
+                label: 'GitHub',
+                href: 'https://github.com/OAAmine',
+                position: 'right',
+              },
+              {
+                label: 'HackTheBox',
+                href: 'https://app.hackthebox.com/profile/1248675',
+                position: 'right',
+              },
+              {
+                label: 'TryHackMe',
+                href: 'https://tryhackme.com/r/p/4M1D0N',
+                position: 'right',
+              },
+              {
+                label: 'RootMe',
+                href: 'https://www.root-me.org/4M1D0N?q=%2F4m1d0n',
+                position: 'right',
+              },
+              {
+                label: 'pwnCollege',
+                href: 'https://pwn.college/hacker/80345',
+                position: 'right',
+              },
+          
         ],
       },
       footer: {
@@ -136,7 +174,23 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/OAAmine',
+              },
+              {
+                label: 'HackTheBox',
+                href: 'https://app.hackthebox.com/profile/1248675',
+              },
+              {
+                label: 'TryHackMe',
+                href: 'https://tryhackme.com/r/p/4M1D0N',
+              },
+              {
+                label: 'RootMe',
+                href: 'https://www.root-me.org/4M1D0N?q=%2F4m1d0n',
+              },
+              {
+                label: 'pwnCollege',
+                href: 'https://pwn.college/hacker/80345',
               },
             ],
           },
@@ -147,7 +201,12 @@ const config = {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
+      tableOfContents: {
+        minHeadingLevel: 2,
+        maxHeadingLevel: 6,
+      },
     }),
 };
+
 
 export default config;
