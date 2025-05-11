@@ -9,17 +9,13 @@
     <icon>https://github.com/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Attack X Detect X Defend]]></title>
-        <id>https://github.com/welcome-docusaurus-v2</id>
-        <link href="https://github.com/welcome-docusaurus-v2"/>
+        <id>https://github.com/Attack_X_Detect_X_Defend</id>
+        <link href="https://github.com/Attack_X_Detect_X_Defend"/>
         <updated>2025-05-12T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[CVE-2025-test]]></summary>
         <content type="html"><![CDATA[<p>Welcome to this blog. This blog is created with <a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer"><strong>Docusaurus 2</strong></a>.</p>
 <p>This is my first post on Docusaurus 2.</p>
 <p>A whole bunch of exploration to follow.</p>]]></content>
-        <author>
-            <name>Amine Ould AMARA (A.K.A 4m1d0n)</name>
-            <uri>https://github.com/JoelMarcey</uri>
-        </author>
         <category label="hello" term="hello"/>
         <category label="docusaurus-v2" term="docusaurus-v2"/>
         <category label="tag?" term="tag?"/>
