@@ -9,17 +9,99 @@
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <item>
-            <title><![CDATA[Attack X Detect X Defend]]></title>
-            <link>https://github.com/Attack_X_Detect_X_Defend</link>
-            <guid>https://github.com/Attack_X_Detect_X_Defend</guid>
+            <title><![CDATA[Deploying a  Cybersecurity Lab on VirtualBox]]></title>
+            <link>https://github.com/deploy-virtualbox-cyber-lab</link>
+            <guid>https://github.com/deploy-virtualbox-cyber-lab</guid>
             <pubDate>Mon, 12 May 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[CVE-2025-test]]></description>
-            <content:encoded><![CDATA[<p>Welcome to this blog. This blog is created with <a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer"><strong>Docusaurus 2</strong></a>.</p>
-<p>This is my first post on Docusaurus 2.</p>
-<p>A whole bunch of exploration to follow.</p>]]></content:encoded>
-            <category>hello</category>
-            <category>docusaurus-v2</category>
-            <category>tag?</category>
+            <description><![CDATA[Step-by-step guide to installing and configuring pfSense as the core router/firewall, Splunk as the SIEM in a segmented cybersecurity lab running on VirtualBox.]]></description>
+            <content:encoded><![CDATA[<p>This blog kicks off a series dedicated to building a complete <strong>cybersecurity home lab</strong> on VirtualBox — designed to support both <strong>red teaming</strong> and <strong>blue teaming</strong> activities. From attacking vulnerable services to detecting malicious behavior with a SIEM, this lab provides a self-contained environment to practice real-world scenarios.</p>
+<p>Throughout this project, we deploy and configure:</p>
+<ul>
+<li><strong>Kali Linux</strong>: our attacker and administration machine</li>
+<li><strong>pfSense</strong>: a firewall/router to segment our lab into realistic network zones</li>
+<li><strong>GOAD (Active Directory lab)</strong>: to simulate internal corporate infrastructure</li>
+<li><strong>A vulnerable web server in the DMZ</strong></li>
+<li><strong>Splunk</strong> (or ELK): for centralized log collection and detection engineering</li>
+<li><strong>OpenVAS/Nessus</strong>: to simulate vulnerability scans and management</li>
+</ul>
+<p>Each system is deployed on VirtualBox and connected through isolated internal networks, allowing realistic simulation of internal, external, and DMZ scenarios. The lab is entirely <strong>offline and open-source friendly</strong> (except where noted, like Nessus Essentials).</p>
+<p>This post gives a full architectural overview and deployment philosophy, with links to step-by-step guides for each component.</p>
+<p>Setting up a dedicated cybersecurity lab is one of the most effective ways to sharpen your skills, experiment safely, and document your progress. Whether you're preparing for certifications, building a red/blue team mindset, or simply exploring new tools, having your own lab environment offers freedom and depth unmatched by online platforms.</p>
+<p>In this blog series, I document the complete setup of my <strong>VirtualBox-based cyber range</strong>, focused on <strong>pentesting, blue teaming (SOC), and vulnerability operations (VOC)</strong>. Everything is hosted locally and uses <strong>free, open-source tools</strong>, making it highly accessible and reproducible.</p>
+<blockquote>
+<p>💡 If you're just looking to jump straight into configuring a core component, check out:
+<a href="https://github.com/docs/category/building-a-security-home-lab-in-virtualbox">Building a Security Home Lab in VirtualBox</a></p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="why-build-a-home-lab">Why Build a Home Lab?<a href="https://github.com/deploy-virtualbox-cyber-lab#why-build-a-home-lab" class="hash-link" aria-label="Direct link to Why Build a Home Lab?" title="Direct link to Why Build a Home Lab?">​</a></h2>
+<p>There are tons of platforms out there (HTB, TryHackMe, etc.), but building your own lab helps you:</p>
+<ul>
+<li>Develop <strong>practical skills</strong> in real-world architectures.</li>
+<li>Learn how <strong>network segmentation</strong>, <strong>routing</strong>, and <strong>firewalling</strong> work.</li>
+<li>Create controlled environments to test malware, exploits, detections, and defenses.</li>
+<li>Practice the <strong>attack–detect–defend</strong> triad used in many professional environments.</li>
+<li>Gain hands-on exposure with <strong>SIEM</strong>, <strong>vulnerability scanners</strong>, <strong>Active Directory</strong>, and <strong>DMZ setups</strong>.</li>
+</ul>
+<p>This lab is designed to mirror enterprise-grade complexity while staying manageable for a single host machine using VirtualBox.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="lab-architecture-overview">Lab Architecture Overview<a href="https://github.com/deploy-virtualbox-cyber-lab#lab-architecture-overview" class="hash-link" aria-label="Direct link to Lab Architecture Overview" title="Direct link to Lab Architecture Overview">​</a></h2>
+<p>Here's a high-level view of the lab’s architecture:</p>
+<table><thead><tr><th>Zone</th><th>Description</th><th>Tools/VMs</th></tr></thead><tbody><tr><td><strong>Internal Network</strong></td><td>Simulates a corporate LAN.</td><td>GOAD (Active Directory), workstations</td></tr><tr><td><strong>DMZ</strong></td><td>Exposed web server to simulate public-facing applications.</td><td>Vulnerable Linux web app</td></tr><tr><td><strong>Attacker Zone</strong></td><td>Where attacks are launched and tests are run.</td><td>Kali Linux</td></tr><tr><td><strong>Routing/Firewall</strong></td><td>Controls traffic between zones.</td><td>pfSense</td></tr><tr><td><strong>SOC (Monitoring)</strong></td><td>Central log aggregation and detection.</td><td>ELK Stack (ElasticSearch, Logstash, Kibana)</td></tr><tr><td><strong>VOC (Vuln Management)</strong></td><td>Detect and manage vulnerabilities.</td><td>OpenVAS or similar</td></tr></tbody></table>
+<p>All virtual machines are interconnected through VirtualBox's internal networks, with pfSense acting as the router and firewall between zones. Each network is segmented, offering a realistic testbed for attacks and defenses.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="project-structure">Project Structure<a href="https://github.com/deploy-virtualbox-cyber-lab#project-structure" class="hash-link" aria-label="Direct link to Project Structure" title="Direct link to Project Structure">​</a></h2>
+<p>The full deployment is structured in <strong>stages</strong>, with each post documenting:</p>
+<ul>
+<li>The <strong>deployment</strong> of a specific component.</li>
+<li>Key <strong>configuration steps</strong>.</li>
+<li>How each component fits into the bigger picture.</li>
+<li>Preparation for a final <strong>Attack / Detect / Defend</strong> demo with CVEs.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="deployment-roadmap">Deployment Roadmap:<a href="https://github.com/deploy-virtualbox-cyber-lab#deployment-roadmap" class="hash-link" aria-label="Direct link to Deployment Roadmap:" title="Direct link to Deployment Roadmap:">​</a></h3>
+<ol>
+<li>Install and configure pfSense with all necessary interfaces</li>
+<li>Install Kali Linux as the attack/admin machine</li>
+<li>Configure pfSense firewall rules</li>
+<li>Deploy a vulnerable Linux web server in the DMZ</li>
+<li>Install GOAD (Active Directory simulation)</li>
+<li>Install and configure the ELK stack for log centralization</li>
+<li>Set up log forwarders and visibility tools</li>
+<li>Deploy OpenVAS for vulnerability scanning</li>
+<li>Launch real-world CVE exploits, detect them via logs, and respond using blue team techniques</li>
+</ol>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="tools-and-technologies">Tools and Technologies<a href="https://github.com/deploy-virtualbox-cyber-lab#tools-and-technologies" class="hash-link" aria-label="Direct link to Tools and Technologies" title="Direct link to Tools and Technologies">​</a></h2>
+<p>This lab uses only <strong>free, open-source</strong> tools:</p>
+<ul>
+<li><strong>VirtualBox</strong> (VMs)</li>
+<li><strong>pfSense</strong> (firewall/router)</li>
+<li><strong>Kali Linux</strong> (attacker)</li>
+<li><strong>GOAD</strong> (Active Directory lab)</li>
+<li><strong>Ubuntu/Debian</strong> (vulnerable apps, web server)</li>
+<li><strong>ELK Stack</strong> (SIEM)</li>
+<li><strong>OpenVAS</strong> (VOC)</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="who-is-this-for">Who Is This For?<a href="https://github.com/deploy-virtualbox-cyber-lab#who-is-this-for" class="hash-link" aria-label="Direct link to Who Is This For?" title="Direct link to Who Is This For?">​</a></h2>
+<p>This series is designed for:</p>
+<ul>
+<li>Security enthusiasts wanting to go beyond CTFs.</li>
+<li>Pentesters looking to simulate internal/external assessments.</li>
+<li>Blue teamers and SOC analysts aiming to improve detection engineering.</li>
+<li>Students prepping for certs like OSCP, CPTS, or Blue Team certs.</li>
+<li>Anyone building a portfolio to land a first job in cybersecurity.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="stay-tuned">Stay Tuned<a href="https://github.com/deploy-virtualbox-cyber-lab#stay-tuned" class="hash-link" aria-label="Direct link to Stay Tuned" title="Direct link to Stay Tuned">​</a></h2>
+<p>Each new component comes with a full walkthrough and technical write-up. You’ll find detailed steps, explanations, and screenshots.</p>
+<p>By the end of this series, you'll have a fully functional lab that supports both red and blue team exercises.</p>
+<p>Happy hacking &amp; hardening!</p>]]></content:encoded>
+            <category>cybersecurity</category>
+            <category>homelab</category>
+            <category>virtualbox</category>
+            <category>pfSense</category>
+            <category>network-segmentation</category>
+            <category>lab-setup</category>
         </item>
     </channel>
 </rss>
