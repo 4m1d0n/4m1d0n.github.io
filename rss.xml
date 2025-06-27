@@ -14,7 +14,9 @@
             <guid>https://github.com/deploy-virtualbox-cyber-lab</guid>
             <pubDate>Mon, 12 May 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[Step-by-step guide to installing and configuring pfSense as the core router/firewall, Splunk as the SIEM in a segmented cybersecurity lab running on VirtualBox.]]></description>
-            <content:encoded><![CDATA[<p>This blog kicks off a series dedicated to building a complete <strong>cybersecurity home lab</strong> on VirtualBox — designed to support both <strong>red teaming</strong> and <strong>blue teaming</strong> activities. From attacking vulnerable services to detecting malicious behavior with a SIEM, this lab provides a self-contained environment to practice real-world scenarios.</p>
+            <content:encoded><![CDATA[<p><strong>WORK IN PROGRESS !!</strong></p>
+<p><strong>WORK IN PROGRESS !!</strong></p>
+<p>This blog kicks off a series dedicated to building a complete <strong>cybersecurity home lab</strong> on VirtualBox — designed to support both <strong>red teaming</strong> and <strong>blue teaming</strong> activities. From attacking vulnerable services to detecting malicious behavior with a SIEM, this lab provides a self-contained environment to practice real-world scenarios.</p>
 <p>Throughout this project, we deploy and configure:</p>
 <ul>
 <li><strong>Kali Linux</strong>: our attacker and administration machine</li>
@@ -26,6 +28,11 @@
 </ul>
 <p>Each system is deployed on VirtualBox and connected through isolated internal networks, allowing realistic simulation of internal, external, and DMZ scenarios. The lab is entirely <strong>offline and open-source friendly</strong> (except where noted, like Nessus Essentials).</p>
 <p>This post gives a full architectural overview and deployment philosophy, with links to step-by-step guides for each component.</p>
+<!-- -->
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="my-network-architecture">My Network Architecture<a href="https://github.com/deploy-virtualbox-cyber-lab#my-network-architecture" class="hash-link" aria-label="Direct link to My Network Architecture" title="Direct link to My Network Architecture">​</a></h2>
+<p>Here is the diagram of the VirtualBox network setup:</p>
+<div style="position:relative;width:100%;height:500px"><iframe class="responsive-iframe" frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%" loading="lazy" src="https://viewer.diagrams.net/?tags=%7B%7D&amp;highlight=0000ff&amp;layers=1&amp;nav=1&amp;title=MyDiagram#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1dJP_nJqBZliPa_Dum1ZIDOIQa0hSF8CH%26export%3Ddownload"></iframe></div>
+<h1>Building a VirtualBox-Based Cybersecurity Home Lab</h1>
 <p>Setting up a dedicated cybersecurity lab is one of the most effective ways to sharpen your skills, experiment safely, and document your progress. Whether you're preparing for certifications, building a red/blue team mindset, or simply exploring new tools, having your own lab environment offers freedom and depth unmatched by online platforms.</p>
 <p>In this blog series, I document the complete setup of my <strong>VirtualBox-based cyber range</strong>, focused on <strong>pentesting, blue teaming (SOC), and vulnerability operations (VOC)</strong>. Everything is hosted locally and uses <strong>free, open-source tools</strong>, making it highly accessible and reproducible.</p>
 <blockquote>
