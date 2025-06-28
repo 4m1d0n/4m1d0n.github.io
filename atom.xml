@@ -97,6 +97,7 @@
 <li>Anyone building a portfolio to land a first job in cybersecurity.</li>
 </ul>
 <hr>
+<p>This tutorial is inspired by <a href="https://benheater.com/" target="_blank" rel="noopener noreferrer">Benjamin Heater's</a> excellent guides and expands with my own lab structure tailored for SOC/VOC/AD segmentation.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="stay-tuned">Stay Tuned<a href="https://github.com/deploy-virtualbox-cyber-lab#stay-tuned" class="hash-link" aria-label="Direct link to Stay Tuned" title="Direct link to Stay Tuned">​</a></h2>
 <p>Each new component comes with a full walkthrough and technical write-up. You’ll find detailed steps, explanations, and screenshots.</p>
 <p>By the end of this series, you'll have a fully functional lab that supports both red and blue team exercises.</p>
