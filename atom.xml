@@ -13,8 +13,7 @@
         <link href="https://github.com/deploy-virtualbox-cyber-lab"/>
         <updated>2025-05-12T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Step-by-step guide to installing and configuring pfSense as the core router/firewall, Splunk as the SIEM in a segmented cybersecurity lab running on VirtualBox.]]></summary>
-        <content type="html"><![CDATA[<p><strong>WORK IN PROGRESS !!</strong></p>
-<p><strong>WORK IN PROGRESS !!</strong></p>
+        <content type="html"><![CDATA[<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p><strong>This post is a work in progress — updates coming soon!</strong></p></div></div>
 <p>This blog kicks off a series dedicated to building a complete <strong>cybersecurity home lab</strong> on VirtualBox — designed to support both <strong>red teaming</strong> and <strong>blue teaming</strong> activities. From attacking vulnerable services to detecting malicious behavior with a SIEM, this lab provides a self-contained environment to practice real-world scenarios.</p>
 <p>Throughout this project, we deploy and configure:</p>
 <ul>
@@ -101,7 +100,7 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="stay-tuned">Stay Tuned<a href="https://github.com/deploy-virtualbox-cyber-lab#stay-tuned" class="hash-link" aria-label="Direct link to Stay Tuned" title="Direct link to Stay Tuned">​</a></h2>
 <p>Each new component comes with a full walkthrough and technical write-up. You’ll find detailed steps, explanations, and screenshots.</p>
 <p>By the end of this series, you'll have a fully functional lab that supports both red and blue team exercises.</p>
-<p>Happy hacking &amp; hardening!</p>]]></content>
+<p>Happy hacking &amp; defending!</p>]]></content>
         <category label="cybersecurity" term="cybersecurity"/>
         <category label="homelab" term="homelab"/>
         <category label="virtualbox" term="virtualbox"/>
