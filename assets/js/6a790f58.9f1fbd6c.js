@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_4_m_1_d_0_n=self.webpackChunk_4_m_1_d_0_n||[]).push([[6569],{11444:t=>{t.exports=JSON.parse('{"tag":{"label":"pentest","permalink":"/tags/pentest","allTagsPath":"/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/tags/pentest","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

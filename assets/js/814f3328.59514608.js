@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_4_m_1_d_0_n=self.webpackChunk_4_m_1_d_0_n||[]).push([[7472],{55513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Deploying a  Cybersecurity Lab on VirtualBox","permalink":"/deploy-virtualbox-cyber-lab","unlisted":false,"date":"2025-05-12T00:00:00.000Z"}]}')}}]);
