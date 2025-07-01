@@ -39,7 +39,7 @@
 <li>They reproduce a range of tokens using <code>uniqid(timestamp)</code> over a short time window.</li>
 <li>They try each token until one is accepted.</li>
 </ol>
-<p><img decoding="async" loading="lazy" alt="How an attacker can exploit predictable token generation with timing guesses." src="https://github.com/assets/images/token_attack-21dc5b344af7c01a927a1f381b310bd9.png" width="790" height="479" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="How an attacker can exploit predictable token generation with timing guesses." src="https://github.com/assets/images/sandwich_attack.drawio-1c2b829efbaa789a2b42065c157f81d2.svg" class="img_ev3q"></p>
 <div class="image_caption"><p>How an attacker can exploit predictable token generation with timing guesses.</p></div>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-risk-of-missing-the-target">The Risk of Missing the Target<a href="https://github.com/retex-insecure-time-token-sandwich-attack#the-risk-of-missing-the-target" class="hash-link" aria-label="Direct link to The Risk of Missing the Target" title="Direct link to The Risk of Missing the Target">​</a></h2>
 <p>But what happens if the attacker is just slightly off with their timing?</p>
