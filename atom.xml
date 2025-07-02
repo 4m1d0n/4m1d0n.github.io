@@ -6,7 +6,7 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://github.com/"/>
     <subtitle>4m1d0n Blog</subtitle>
-    <icon>https://github.com/img/favicon.ico</icon>
+    <icon>https://github.com/img/logo.png</icon>
     <entry>
         <title type="html"><![CDATA[Cracking Time-Based Tokens: A Glimpse from a Workshop During leHACK 2025-Singularity]]></title>
         <id>https://github.com/retex-insecure-time-token-sandwich-attack</id>
