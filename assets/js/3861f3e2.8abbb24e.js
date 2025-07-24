@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_4_m_1_d_0_n=self.webpackChunk_4_m_1_d_0_n||[]).push([[8321],{46316:a=>{a.exports=JSON.parse('{"tag":{"label":"Wazuh","permalink":"/tags/wazuh","allTagsPath":"/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/tags/wazuh","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
